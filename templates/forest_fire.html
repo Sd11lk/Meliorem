@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="static/css/menu.css">
+  <title>Teacher Page - Input</title>
+
+    <style>
+        #tt{
+            text-align: center;
+        }
+      </style>
+
+
+</head>
+
+<body bgcolor="#FFFAF1">
+
+<!-- NAVBAR-->
+<details>
+  <summary></summary>
+  <nav class="menu">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="#link">Support</a>
+    <a href="#link">About</a>
+    <a href="#link">Feedback</a>
+  </nav>
+</details>
+<h1 id="tt" style="color:black;"> Professor Page </h1>
+
+
+            <form action="/upload_file" method="POST" enctype="multipart/form-data">
+
+              <div>
+                <label>
+                  <div>
+                    <label for="cars" style="color:black;">Choose a form:</label>
+
+                    <select id="cars" name="cars">
+                      <option value="volvo">Table</option>
+                      <option value="saab">Graph</option>
+                    </select>
+
+
+                 <select id="sems" name="sems">
+                      <option value="sem-1">Average</option>
+                    </select>
+
+                    <input type="file" name="test_file" id="test_file">
+                  </div>
+                </label>
+              </div>
+              <button type="submit">Upload File</button>
+            </form>
+
+          </div>
+          <div>
+            <canvas id="lineChart" width="1350" height="400" style="background-color: #dedada"></canvas>
+            <script>
+              var ctx = document.getElementById("lineChart").getContext("2d");
+              var lineChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                  labels: {{ labels | safe }},
+                  datasets: [
+                    {
+                      label: "Predicted CGPA",
+                      data: {{ values | safe }},
+                      fill: false,
+                      borderColor: "rgb(75,192,192)",
+                      lineTension: 0.1
+
+                  }
+                  ]
+                },
+                options: {
+                  responsive: false
+                }
+              });
+            </script>
+          </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA_Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js'></script>
+    <link rel="stylesheet" href="static/css/menu.css">
+    <title>Meliorem - Login Page</title>
+
+<!-- BACKGROUND IMAGE STYLE -->
+  <style>
+
+      #tt{
+          text-align: center;
+      }
+
+
+      .paper-link{
+        margin-left: 10px;
+        padding-bottom: 30px;
+      }
+
+    </style>
+</head>
+
+<!-- BACKGROUND IMAGE -->
+<body bgcolor="#FFFAF1">
+
+<!-- NAVBAR - LOGIN PAGE -->
+<details>
+  <summary></summary>
+  <nav class="menu">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="#link">Support</a>
+    <a href="#link">About</a>
+    <a href="/" onclick="alert('Logout triggered for Savio Dcruz. You will be redirected to home page.');">Logout</a>
+  </nav>
+</details>
+
+<!-- PROJECT TITLE CENTER ALIGNED -->
+
+<!-- LOGIN CREDENTIALS -->
+<h2 id="tt" style="color:black;"> Group 0 - Boderline </h2>
+
+<h4 id="tt" style="color:black;">Projected grade less than or equal to 6.75<h4>
+
+<!-- GRAPH CODE HERE -->
+<div>
+  <canvas id="lineChart" width="900" height="400"></canvas>
+  <script>
+    var ctx = document.getElementById("lineChart").getContext("2d");
+    var lineChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: {{ labels | safe }},
+        datasets: [
+          {
+            label: "CGPA",
+            data: {{ values | safe }},
+            fill: false,
+            borderColor: "rgb(75,192,192)",
+            backgroundColor: 'white',
+            lineTension: 0.1
+
+        }
+        ]
+      },
+      options: {
+        responsive: false
+      }
+    });
+  </script>
+</div>
+
+
+
+
+
+
+<!-- GRAPH CODE ENDS --> <br><br>
+<p style="color:black;">Click on the image to download study material or download zip file:<p>
+<br>
+  <!-- File 0 zip file -->
+  <div>
+  		<a class="down" href="static/qp/Group 2/Group 2.zip" download><span>Android</span><span>ZIP</span></a>
+  		<a class="down" href="static/qp/Group 2/Group 2.zip" download><span>PHP</span><span>ZIP</span></a>
+  		<a class="down" href="static/qp/Group 2/Group 2.zip" download><span>ALL</span><span>ZIP</span></a>
+  </div>
+
+</body>
+</html>

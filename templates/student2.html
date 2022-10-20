@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/stu.css">
+  <title>Student Page - Input</title>
+
+<!-- BACKGROUND IMAGE STYLE -->
+    <style>
+
+        #tt{
+            text-align: center;
+        }
+
+      </style>
+</head>
+<!-- BACKGROUND IMAGE -->
+<body bgcolor="#FFFAF1">
+
+<!-- NAVBAR - LOGIN PAGE -->
+<details>
+  <summary></summary>
+  <nav class="menu">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="#link">Support</a>
+    <a href="#link">About</a>
+    <a href="/" onclick="alert('Logout triggered for Sakshi Chauhan. You will be redirected to home page.');">Logout</a>
+  </nav>
+</details>
+<h1 id="tt"> Student Page </h1>
+<h3 id="tt"> Welcome Sakshi Chauhan </h3>
+
+
+
+
+
+<!-- SEM WISE INPUT -->
+<div class="feck">
+  <form action='/predict' method="post" class="col s12">
+    <div class="row">
+
+      <!-- SEM 1 INPUT -->
+      <div class="input-field col s4">
+        <label for="first_name"><b>Sem-1</b></label>
+          <br>
+        <input placeholder="SEM 1 CGPA" name="Temperature" id="first_name" type="input" step="0.01" min="0.00" max="10.00" class="validate">
+      </div>
+
+      <!-- SEM 2 INPUT -->
+      <div class="input-field col s4">
+        <label for="last_name"><b>Sem-2</b></label>
+          <br>
+        <input id="last_name" name="Oxygen" placeholder="SEM 2 CGPA"  type="input" step="0.01" min="0.00" max="10.00" class="validate">
+      </div>
+
+      <!-- SEM 3 INPUT -->
+      <div class="input-field col s4">
+        <label for="_name1"><b>Sem-3</b></label>
+            <br>
+        <input id="_name1" name="Humidity" placeholder="SEM 3 CGPA" type="input" step="0.01" min="0.00" max="10.00" class="validate">
+      </div>
+
+      <!-- SEM 4 INPUT -->
+      <div class="input-field col s4">
+        <label for="_name2"><b>Sem-4</b></label>
+            <br>
+        <input id="_name2" name="Humidity1" placeholder="SEM 4 CGPA" type="input" step="0.01" min="0.00" max="10.00" class="validate">
+      </div>
+
+      <!-- SEM 5 INPUT -->
+      <div class="input-field col s4">
+        <label for="_name3"><b>Sem-5</b></label>
+            <br>
+        <input id="_name3" name="Humidity2" placeholder="SEM 5 CGPA" type="input" step="0.01" min="0.00" max="10.00" class="validate">
+      </div>
+
+
+
+<!-- SEM WISE SUBMIT BUTTON -->
+<div class="row center"><br>
+  <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+</div>
+
+</form>
+</div>
+
+<br>{{pred}}<br>
+
+</body>
+</html>
